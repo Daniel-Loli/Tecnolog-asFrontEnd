@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <title>layout</title>
 </head>
 <style>
@@ -62,39 +65,57 @@
         margin: 10px;
         width: 12rem;
         height: 8rem;
+        cursor:pointer;
+        display: grid;
+        place-items: center;
         
     }
-    .image-item{
-        width: 100%;
-        border-radius: 16px;
+    
+    .icon:hover{
+        width: 300px;
     }
-
+    
     .main-container{
         grid-area: main-container;
         background-color: rgb(214, 214, 226);
         display: grid;
         place-items: center;
+        gap: 0;
     }
     .card{
-        margin: 10px;
-        width: 40%;
-        height: 60%;
-        background-color: tomato;
+        width: 30%;
+        height: 45%;
 
-
+    }
+    .welcome{
+        font-size: 1.5rem;
+        font-family: 'Shadows Into Light', cursive;
     }
     .image-card{
-        height: 40%;
-        background-color: yellow;
+        height: 50%;
+    }
+    .img-card{
+        width: 100%;
+        border-radius: 8px;
     }
     .description-card{
-        height: 60%;
-        background-color: rgb(0, 81, 255);
+
+        height: 50%;
+        background-color: rgb(255, 153, 0);
+        padding: 10px;
+        font-size: 1rem;
+        
+    }
+    .name{
+        text-align: center;
     }
 
     .footer-container{
         grid-area: footer-container;
-        background-color: yellowgreen;
+        background-color: #7a8691;
+    }
+    .inactive{
+        display: none;
     }
 </style>
 <body>
@@ -118,8 +139,8 @@
 
     <aside class="aside-container">
 
-        <div class="item">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-python" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <div class="item" id="item1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-python"  width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M12 9h-7a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h3" />
                 <path d="M12 15h7a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-3" />
@@ -129,7 +150,7 @@
               </svg>
         </div>
         <div class="item">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-javascript" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-javascript" id="item2" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
                 <path d="M7.5 8h3v8l-2 -1" />
@@ -137,21 +158,21 @@
               </svg>
         </div>
         <div class="item">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-html5" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-html5" id="item3" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
                 <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
               </svg>
         </div>
         <div class="item">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-css3" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-css3" id="item4" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
                 <path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
               </svg>
         </div>
         <div class="item">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-react" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-react" id="item5" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round" >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102" />
                 <path d="M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102" />
@@ -166,20 +187,26 @@
     </aside>
 
     <main class="main-container">
-        <div class="card">
-            <div class="image-card">
-                <span>pdasd</span>
+        <div class="card inactive" id="card">
+            <div class="image-card" id="image-card">
+                <img class="img-card" src="" alt="" id="img-card">
             </div>
 
-            <div class="description-card">
-
+            <div class="description-card" id="description-card">
+                <p class="name" id="p1"></p>
+                <p id="p2"></p>
             </div>
+        </div>
+        <div class="welcome" id="welcome">
+            <h1>Welcome to learning with Codev</h1>
         </div>
     </main>
 
     <footer class="footer-container">
         <p>hola mundo</p>
     </footer>
+
+    <script src="./app.js"></script>
     
 </body>
 </html>
